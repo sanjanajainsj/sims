@@ -1,0 +1,9 @@
+I"ˆ(function() {
+  $(function() {
+    return $('#seed').tokenInput('/seeds.json', {
+      crossDomain: false
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gid:</strong>
+  <%= @seed.gid %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @seed.location %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @seed.room %>
+</p>
+
+<p>
+  <strong>Row:</strong>
+  <%= @seed.row %>
+</p>
+
+<p>
+  <strong>Shelf:</strong>
+  <%= @seed.shelf %>
+</p>
+
+<p>
+  <strong>Box:</strong>
+  <%= @seed.box %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @seed.stock_id %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @seed.source %>
+</p>
+
+<%= link_to 'Edit', edit_seed_path(@seed) %> |
+<%= link_to 'Back', seeds_path %>

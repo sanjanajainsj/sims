@@ -1,0 +1,1144 @@
+  [1m[36m (104.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (64.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSeeds (20170524052409)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (89.3ms)[0m  [1mCREATE TABLE "seeds" ("id" serial primary key, "gid" integer, "location" character varying, "room" character varying, "row" character varying, "shelf" character varying, "box" character varying, "stock_id" character varying, "source" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20170524052409"]]
+  [1m[36m (16.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'seeds'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'seeds'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-25 22:48:12 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (1.5ms)
+Completed 200 OK in 85ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sims" for 127.0.0.1 at 2017-05-25 22:48:28 +0700
+
+ActionController::RoutingError (No route matches [GET] "/sims"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /home/sanjana/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/sanjana/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/sanjana/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (78.3ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-25 22:48:42 +0700
+Processing by SeedsController#index as HTML
+  [1m[35mSeed Load (14.2ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 691ms (Views: 671.9ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/assets/scaffolds.self-900f80006f14166f1f172fc2c6cdd53af482ff0e386c8ddec7f52d648792c452.css?body=1" for 127.0.0.1 at 2017-05-25 22:48:43 +0700
+
+
+Started GET "/assets/seeds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-05-25 22:48:43 +0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-05-25 22:48:43 +0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-05-25 22:48:43 +0700
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-05-25 22:48:43 +0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-05-25 22:48:43 +0700
+
+
+Started GET "/assets/seeds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-05-25 22:48:43 +0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-05-25 22:48:43 +0700
+
+
+Started GET "/seeds/new" for 127.0.0.1 at 2017-05-25 22:48:46 +0700
+Processing by SeedsController#new as HTML
+  Rendered seeds/_form.html.erb (260.3ms)
+  Rendered seeds/new.html.erb within layouts/application (307.5ms)
+Completed 200 OK in 340ms (Views: 328.6ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/seeds" for 127.0.0.1 at 2017-05-25 22:51:32 +0700
+Processing by SeedsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ifh8PDrEK+cHbEM8GnEIABypxwC/s6JQUEHZH9xIrGm6qgGNneCOrhJ6bUkgzES+cvByIUzICIcvt+0E0XVMxg==", "seed"=>{"gid"=>"500", "location"=>"PTT", "room"=>"Room1", "row"=>"Rw1", "shelf"=>"SF4", "box"=>"Box3", "stock_id"=>"PTT003-1", "source"=>"Nursery3"}, "commit"=>"Create Seed"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "seeds" ("gid", "location", "room", "row", "shelf", "box", "stock_id", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["gid", 500], ["location", "PTT"], ["room", "Room1"], ["row", "Rw1"], ["shelf", "SF4"], ["box", "Box3"], ["stock_id", "PTT003-1"], ["source", "Nursery3"], ["created_at", "2017-05-25 15:51:32.782652"], ["updated_at", "2017-05-25 15:51:32.782652"]]
+  [1m[36m (94.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/seeds/1
+Completed 302 Found in 199ms (ActiveRecord: 95.2ms)
+
+
+Started GET "/seeds/1" for 127.0.0.1 at 2017-05-25 22:51:32 +0700
+Processing by SeedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSeed Load (0.2ms)[0m  SELECT  "seeds".* FROM "seeds" WHERE "seeds"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered seeds/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 157ms (Views: 18.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-25 22:53:50 +0700
+Processing by SeedsController#index as HTML
+  [1m[36mSeed Load (0.3ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seeds/new" for 127.0.0.1 at 2017-05-25 22:58:23 +0700
+Processing by SeedsController#new as HTML
+  Rendered seeds/_form.html.erb (2.8ms)
+  Rendered seeds/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/seeds" for 127.0.0.1 at 2017-05-25 23:08:39 +0700
+Processing by SeedsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ji3VRmQjVTOvvjfF2iC/VrW5S2/QeEq3LV1Lp57Mgi0Vf6j3wwfwerqoGbDgnfPo2+D+TiMD4GBSq3+8k/Figg==", "seed"=>{"gid"=>"502", "location"=>"PTT", "room"=>"Room1", "row"=>"Rw1", "shelf"=>"SF4", "box"=>"Box3", "stock_id"=>"PTT003-2", "source"=>"Nursery3"}, "commit"=>"Create Seed"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "seeds" ("gid", "location", "room", "row", "shelf", "box", "stock_id", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["gid", 502], ["location", "PTT"], ["room", "Room1"], ["row", "Rw1"], ["shelf", "SF4"], ["box", "Box3"], ["stock_id", "PTT003-2"], ["source", "Nursery3"], ["created_at", "2017-05-25 16:08:39.310917"], ["updated_at", "2017-05-25 16:08:39.310917"]]
+  [1m[35m (16.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/seeds/2
+Completed 302 Found in 20ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/seeds/2" for 127.0.0.1 at 2017-05-25 23:08:39 +0700
+Processing by SeedsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSeed Load (0.4ms)[0m  [1mSELECT  "seeds".* FROM "seeds" WHERE "seeds"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered seeds/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-25 23:08:41 +0700
+Processing by SeedsController#index as HTML
+  [1m[35mSeed Load (0.4ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-25 23:11:03 +0700
+Processing by SeedsController#index as HTML
+  [1m[36mSeed Load (0.2ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-25 23:17:26 +0700
+Processing by SeedsController#index as HTML
+  [1m[35mSeed Load (0.2ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds/1/edit" for 127.0.0.1 at 2017-05-25 23:17:41 +0700
+Processing by SeedsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeed Load (0.3ms)[0m  [1mSELECT  "seeds".* FROM "seeds" WHERE "seeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered seeds/_form.html.erb (2.8ms)
+  Rendered seeds/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seeds/2/edit" for 127.0.0.1 at 2017-05-25 23:17:46 +0700
+Processing by SeedsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSeed Load (0.3ms)[0m  SELECT  "seeds".* FROM "seeds" WHERE "seeds"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered seeds/_form.html.erb (6.1ms)
+  Rendered seeds/edit.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-25 23:29:22 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SeedsController#index as HTML
+  [1m[35mSeed Load (1.0ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 395ms (Views: 383.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/token-input.self-7d6806b14fa61dd1a4128ee0fa6521e3f1827bf872722dc9bba81a477216f288.css?body=1" for 127.0.0.1 at 2017-05-25 23:29:23 +0700
+
+
+Started GET "/assets/jquery.tokeninput.self-dced6143b937244258fd69f702a0e4266d30c2f28d5cb03ecae614a5e6c13494.js?body=1" for 127.0.0.1 at 2017-05-25 23:29:23 +0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2017-05-25 23:29:23 +0700
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2017-05-25 23:29:23 +0700
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-25 23:29:48 +0700
+Processing by SeedsController#index as HTML
+  [1m[36mSeed Load (0.3ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-25 23:58:14 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SeedsController#index as HTML
+  Rendered seeds/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    24:   </thead>
+    25: 
+    26:   <tbody>
+    27:     <% @seeds.each do |seed| %>
+    28:       <tr>
+    29:         <td><%= seed.gid %></td>
+    30:         <td><%= seed.location %></td>
+  app/views/seeds/index.html.erb:27:in `_app_views_seeds_index_html_erb___3227162860238227529_69901398667160'
+  app/controllers/seeds_controller.rb:7:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (27.6ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:01:32 +0700
+Processing by SeedsController#index as HTML
+  Rendered seeds/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    24:   </thead>
+    25: 
+    26:   <tbody>
+    27:     <% @seeds.each do |seed| %>
+    28:       <tr>
+    29:         <td><%= seed.gid %></td>
+    30:         <td><%= seed.location %></td>
+  app/views/seeds/index.html.erb:27:in `_app_views_seeds_index_html_erb___3227162860238227529_69901398667160'
+  app/controllers/seeds_controller.rb:7:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (10.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (26.1ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:01:39 +0700
+Processing by SeedsController#index as HTML
+  Rendered seeds/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    24:   </thead>
+    25: 
+    26:   <tbody>
+    27:     <% @seeds.each do |seed| %>
+    28:       <tr>
+    29:         <td><%= seed.gid %></td>
+    30:         <td><%= seed.location %></td>
+  app/views/seeds/index.html.erb:27:in `_app_views_seeds_index_html_erb___3227162860238227529_69901398667160'
+  app/controllers/seeds_controller.rb:7:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (10.8ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (25.6ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:02:37 +0700
+Processing by SeedsController#index as HTML
+  [1m[35mSeed Load (0.3ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 371ms (Views: 367.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/seeds.self-e352d9a730d41e81fee92a2722facf84b5fb72d78ece31026165a6d3f055ca73.js?body=1" for 127.0.0.1 at 2017-05-26 00:02:38 +0700
+
+
+Started GET "/seeds.json?q=p" for 127.0.0.1 at 2017-05-26 00:02:45 +0700
+Processing by SeedsController#index as JSON
+  Parameters: {"q"=>"p"}
+  [1m[36mSeed Load (0.2ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/_seed.json.jbuilder (0.7ms)
+  Rendered seeds/_seed.json.jbuilder (0.2ms)
+  Rendered seeds/index.json.jbuilder (33.8ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds.json?q=ptt" for 127.0.0.1 at 2017-05-26 00:02:45 +0700
+Processing by SeedsController#index as JSON
+  Parameters: {"q"=>"ptt"}
+  [1m[35mSeed Load (0.2ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/_seed.json.jbuilder (0.3ms)
+  Rendered seeds/_seed.json.jbuilder (0.2ms)
+  Rendered seeds/index.json.jbuilder (2.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=&commit=Search" for 127.0.0.1 at 2017-05-26 00:02:45 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"", "commit"=>"Search"}
+  [1m[36mSeed Load (0.3ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seeds.json?q=roo" for 127.0.0.1 at 2017-05-26 00:02:51 +0700
+Processing by SeedsController#index as JSON
+  Parameters: {"q"=>"roo"}
+  [1m[35mSeed Load (0.3ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/_seed.json.jbuilder (0.3ms)
+  Rendered seeds/_seed.json.jbuilder (0.2ms)
+  Rendered seeds/index.json.jbuilder (2.4ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seeds.json?q=roomm" for 127.0.0.1 at 2017-05-26 00:02:52 +0700
+Processing by SeedsController#index as JSON
+  Parameters: {"q"=>"roomm"}
+  [1m[36mSeed Load (0.2ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/_seed.json.jbuilder (0.3ms)
+  Rendered seeds/_seed.json.jbuilder (0.2ms)
+  Rendered seeds/index.json.jbuilder (2.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=&commit=Search" for 127.0.0.1 at 2017-05-26 00:02:52 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"", "commit"=>"Search"}
+  [1m[35mSeed Load (0.3ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seeds.json?q=50" for 127.0.0.1 at 2017-05-26 00:05:56 +0700
+Processing by SeedsController#index as JSON
+  Parameters: {"q"=>"50"}
+  [1m[36mSeed Load (0.2ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/_seed.json.jbuilder (0.4ms)
+  Rendered seeds/_seed.json.jbuilder (0.3ms)
+  Rendered seeds/index.json.jbuilder (2.3ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds.json?q=501" for 127.0.0.1 at 2017-05-26 00:05:56 +0700
+Processing by SeedsController#index as JSON
+  Parameters: {"q"=>"501"}
+  [1m[35mSeed Load (0.2ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/_seed.json.jbuilder (0.4ms)
+  Rendered seeds/_seed.json.jbuilder (0.4ms)
+  Rendered seeds/index.json.jbuilder (2.4ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=&commit=Search" for 127.0.0.1 at 2017-05-26 00:05:56 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"", "commit"=>"Search"}
+  [1m[36mSeed Load (0.3ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=&commit=Search" for 127.0.0.1 at 2017-05-26 00:10:08 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"", "commit"=>"Search"}
+  Rendered seeds/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    24:   </thead>
+    25: 
+    26:   <tbody>
+    27:     <% @seeds.each do |seed| %>
+    28:       <tr>
+    29:         <td><%= seed.gid %></td>
+    30:         <td><%= seed.location %></td>
+  app/views/seeds/index.html.erb:27:in `_app_views_seeds_index_html_erb___3227162860238227529_69901398667160'
+  app/controllers/seeds_controller.rb:7:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (24.9ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:10:18 +0700
+Processing by SeedsController#index as HTML
+  Rendered seeds/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    24:   </thead>
+    25: 
+    26:   <tbody>
+    27:     <% @seeds.each do |seed| %>
+    28:       <tr>
+    29:         <td><%= seed.gid %></td>
+    30:         <td><%= seed.location %></td>
+  app/views/seeds/index.html.erb:27:in `_app_views_seeds_index_html_erb___3227162860238227529_69901398667160'
+  app/controllers/seeds_controller.rb:7:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (10.0ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (24.9ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:13:26 +0700
+Processing by SeedsController#index as HTML
+  Rendered seeds/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `any?' for nil:NilClass):
+    24:   </thead>
+    25: 
+    26:   <tbody>
+    27:     <% if @seeds.any? %>
+    28:     <% @seeds.each do |seed| %>
+    29:       <tr>
+    30:         <td><%= seed.gid %></td>
+  app/views/seeds/index.html.erb:27:in `_app_views_seeds_index_html_erb___3227162860238227529_69901421816660'
+  app/controllers/seeds_controller.rb:7:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.4ms)
+
+
+Started GET "/seeds/new" for 127.0.0.1 at 2017-05-26 00:14:30 +0700
+Processing by SeedsController#new as HTML
+  Rendered seeds/_form.html.erb (10.5ms)
+  Rendered seeds/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 37ms (Views: 26.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:14:33 +0700
+Processing by SeedsController#index as HTML
+  Rendered seeds/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `any?' for nil:NilClass):
+    24:   </thead>
+    25: 
+    26:   <tbody>
+    27:     <% if @seeds.any? %>
+    28:     <% @seeds.each do |seed| %>
+    29:       <tr>
+    30:         <td><%= seed.gid %></td>
+  app/views/seeds/index.html.erb:27:in `_app_views_seeds_index_html_erb___3227162860238227529_69901421816660'
+  app/controllers/seeds_controller.rb:7:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.0ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (26.5ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:14:35 +0700
+Processing by SeedsController#index as HTML
+  Rendered seeds/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `any?' for nil:NilClass):
+    24:   </thead>
+    25: 
+    26:   <tbody>
+    27:     <% if @seeds.any? %>
+    28:     <% @seeds.each do |seed| %>
+    29:       <tr>
+    30:         <td><%= seed.gid %></td>
+  app/views/seeds/index.html.erb:27:in `_app_views_seeds_index_html_erb___3227162860238227529_69901421816660'
+  app/controllers/seeds_controller.rb:7:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (13.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (24.9ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:15:23 +0700
+Processing by SeedsController#index as HTML
+  Rendered seeds/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    25: 
+    26:   <tbody>
+    27: 
+    28:     <% @seeds.each do |seed| %>
+    29:       <tr>
+    30:         <td><%= seed.gid %></td>
+    31:         <td><%= seed.location %></td>
+  app/views/seeds/index.html.erb:28:in `_app_views_seeds_index_html_erb___3227162860238227529_69901420543520'
+  app/controllers/seeds_controller.rb:7:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.0ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.1ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:15:51 +0700
+Processing by SeedsController#index as HTML
+  [1m[35mSeed Load (0.2ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=&commit=Search" for 127.0.0.1 at 2017-05-26 00:15:56 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"", "commit"=>"Search"}
+  [1m[36mSeed Load (1.1ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/seeds.json?q=500" for 127.0.0.1 at 2017-05-26 00:15:56 +0700
+Processing by SeedsController#index as JSON
+  Parameters: {"q"=>"500"}
+  [1m[35mSeed Load (0.3ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/_seed.json.jbuilder (0.6ms)
+  Rendered seeds/_seed.json.jbuilder (0.5ms)
+  Rendered seeds/index.json.jbuilder (5.1ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seeds.json?q=501" for 127.0.0.1 at 2017-05-26 00:16:06 +0700
+Processing by SeedsController#index as JSON
+  Parameters: {"q"=>"501"}
+  [1m[36mSeed Load (0.2ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/_seed.json.jbuilder (0.3ms)
+  Rendered seeds/_seed.json.jbuilder (0.2ms)
+  Rendered seeds/index.json.jbuilder (2.0ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=&commit=Search" for 127.0.0.1 at 2017-05-26 00:16:08 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"", "commit"=>"Search"}
+  [1m[35mSeed Load (0.3ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=501&commit=Search" for 127.0.0.1 at 2017-05-26 00:16:16 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"501", "commit"=>"Search"}
+  [1m[36mSeed Load (0.4ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=501&commit=Search" for 127.0.0.1 at 2017-05-26 00:16:40 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"501", "commit"=>"Search"}
+  [1m[35mSeed Load (33.6ms)[0m  SELECT "seeds".* FROM "seeds" WHERE (gid ilike '%501%')
+PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~* unknown
+LINE 1: SELECT "seeds".* FROM "seeds" WHERE (gid ilike '%501%')
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "seeds".* FROM "seeds" WHERE (gid ilike '%501%')
+  Rendered seeds/index.html.erb within layouts/application (35.3ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 33.6ms)
+
+ActionView::Template::Error (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~* unknown
+LINE 1: SELECT "seeds".* FROM "seeds" WHERE (gid ilike '%501%')
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "seeds".* FROM "seeds" WHERE (gid ilike '%501%')):
+    25: 
+    26:   <tbody>
+    27: 
+    28:     <% @seeds.each do |seed| %>
+    29:       <tr>
+    30:         <td><%= seed.gid %></td>
+    31:         <td><%= seed.location %></td>
+  app/views/seeds/index.html.erb:28:in `_app_views_seeds_index_html_erb___3227162860238227529_69901420543520'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (24.7ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=500&commit=Search" for 127.0.0.1 at 2017-05-26 00:16:46 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"500", "commit"=>"Search"}
+  [1m[36mSeed Load (1.2ms)[0m  [1mSELECT "seeds".* FROM "seeds" WHERE (gid ilike '%500%')[0m
+PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~* unknown
+LINE 1: SELECT "seeds".* FROM "seeds" WHERE (gid ilike '%500%')
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "seeds".* FROM "seeds" WHERE (gid ilike '%500%')
+  Rendered seeds/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.2ms)
+
+ActionView::Template::Error (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~* unknown
+LINE 1: SELECT "seeds".* FROM "seeds" WHERE (gid ilike '%500%')
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "seeds".* FROM "seeds" WHERE (gid ilike '%500%')):
+    25: 
+    26:   <tbody>
+    27: 
+    28:     <% @seeds.each do |seed| %>
+    29:       <tr>
+    30:         <td><%= seed.gid %></td>
+    31:         <td><%= seed.location %></td>
+  app/views/seeds/index.html.erb:28:in `_app_views_seeds_index_html_erb___3227162860238227529_69901420543520'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (22.8ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=500&commit=Search" for 127.0.0.1 at 2017-05-26 00:21:00 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"500", "commit"=>"Search"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `search' for #<Class:0x007f26628a4870>):
+  app/controllers/seeds_controller.rb:9:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (22.9ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=500&commit=Search" for 127.0.0.1 at 2017-05-26 00:21:06 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"500", "commit"=>"Search"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `search' for #<Class:0x007f26628a4870>):
+  app/controllers/seeds_controller.rb:9:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.9ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (26.4ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:21:11 +0700
+Processing by SeedsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `search' for #<Class:0x007f26628a4870>):
+  app/controllers/seeds_controller.rb:9:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (10.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (23.9ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:21:49 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SeedsController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `search' for #<Class:0x007f51bc119e68>):
+  app/controllers/seeds_controller.rb:9:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.0ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:23:39 +0700
+Processing by SeedsController#index as HTML
+  [1m[35mSeed Load (0.3ms)[0m  SELECT  "seeds".* FROM "seeds" WHERE "seeds"."id" = $1 LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 13ms (ActiveRecord: 1.9ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Seed with 'id'=all):
+  app/controllers/seeds_controller.rb:11:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (25.5ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:23:43 +0700
+Processing by SeedsController#index as HTML
+  [1m[36mSeed Load (0.2ms)[0m  [1mSELECT  "seeds".* FROM "seeds" WHERE "seeds"."id" = $1 LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Seed with 'id'=all):
+  app/controllers/seeds_controller.rb:11:in `index'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.0ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (10.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (22.7ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:25:07 +0700
+Processing by SeedsController#index as HTML
+  [1m[35mSeed Load (0.2ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 200ms (Views: 197.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:26:07 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SeedsController#index as HTML
+  [1m[35mSeed Load (0.6ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 209ms (Views: 195.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:28:19 +0700
+Processing by SeedsController#index as HTML
+  [1m[36mSeed Load (0.2ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds.json?q=50" for 127.0.0.1 at 2017-05-26 00:28:23 +0700
+Processing by SeedsController#index as JSON
+  Parameters: {"q"=>"50"}
+  [1m[35mSeed Load (0.2ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/_seed.json.jbuilder (0.7ms)
+  Rendered seeds/_seed.json.jbuilder (0.2ms)
+  Rendered seeds/index.json.jbuilder (5.0ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds.json?q=501" for 127.0.0.1 at 2017-05-26 00:28:23 +0700
+Processing by SeedsController#index as JSON
+  Parameters: {"q"=>"501"}
+  [1m[36mSeed Load (0.2ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/_seed.json.jbuilder (0.4ms)
+  Rendered seeds/_seed.json.jbuilder (0.2ms)
+  Rendered seeds/index.json.jbuilder (2.3ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=&commit=Search" for 127.0.0.1 at 2017-05-26 00:28:24 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"", "commit"=>"Search"}
+  [1m[35mSeed Load (0.2ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds.json?q=50" for 127.0.0.1 at 2017-05-26 00:28:27 +0700
+Processing by SeedsController#index as JSON
+  Parameters: {"q"=>"50"}
+  [1m[36mSeed Load (0.2ms)[0m  [1mSELECT "seeds".* FROM "seeds"[0m
+  Rendered seeds/_seed.json.jbuilder (0.3ms)
+  Rendered seeds/_seed.json.jbuilder (0.2ms)
+  Rendered seeds/index.json.jbuilder (1.9ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=&commit=Search" for 127.0.0.1 at 2017-05-26 00:28:27 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"", "commit"=>"Search"}
+  [1m[35mSeed Load (0.2ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&seed=&commit=Search" for 127.0.0.1 at 2017-05-26 00:29:15 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "seed"=>"", "commit"=>"Search"}
+  [1m[35mSeed Load (0.4ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 209ms (Views: 199.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&search=500&commit=Search" for 127.0.0.1 at 2017-05-26 00:29:20 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"500", "commit"=>"Search"}
+  [1m[36mSeed Load (0.7ms)[0m  [1mSELECT "seeds".* FROM "seeds" WHERE (gid LIKE '%500%')[0m
+PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: SELECT "seeds".* FROM "seeds" WHERE (gid LIKE '%500%')
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "seeds".* FROM "seeds" WHERE (gid LIKE '%500%')
+  Rendered seeds/index.html.erb within layouts/application (32.1ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: SELECT "seeds".* FROM "seeds" WHERE (gid LIKE '%500%')
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "seeds".* FROM "seeds" WHERE (gid LIKE '%500%')):
+    35: 
+    36:   <tbody>
+    37: 
+    38:     <% @seeds.each do |seed| %>
+    39:       <tr>
+    40:         <td><%= seed.gid %></td>
+    41:         <td><%= seed.location %></td>
+  app/views/seeds/index.html.erb:38:in `_app_views_seeds_index_html_erb__832877233127666185_70109874591720'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (64.4ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&search=500&commit=Search" for 127.0.0.1 at 2017-05-26 00:29:54 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"500", "commit"=>"Search"}
+  [1m[35mSeed Load (0.7ms)[0m  SELECT "seeds".* FROM "seeds" WHERE (gid LIKE '500')
+PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: SELECT "seeds".* FROM "seeds" WHERE (gid LIKE '500')
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "seeds".* FROM "seeds" WHERE (gid LIKE '500')
+  Rendered seeds/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (PG::UndefinedFunction: ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: SELECT "seeds".* FROM "seeds" WHERE (gid LIKE '500')
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+: SELECT "seeds".* FROM "seeds" WHERE (gid LIKE '500')):
+    35: 
+    36:   <tbody>
+    37: 
+    38:     <% @seeds.each do |seed| %>
+    39:       <tr>
+    40:         <td><%= seed.gid %></td>
+    41:         <td><%= seed.location %></td>
+  app/views/seeds/index.html.erb:38:in `_app_views_seeds_index_html_erb__832877233127666185_70109874591720'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (10.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (23.0ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&search=500&commit=Search" for 127.0.0.1 at 2017-05-26 00:31:52 +0700
+
+SyntaxError (/home/sanjana/Desktop/Seeds/sims/app/controllers/seeds_controller.rb:11: syntax error, unexpected keyword_else, expecting ')'):
+  app/controllers/seeds_controller.rb:11: syntax error, unexpected keyword_else, expecting ')'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.6ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (22.7ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&search=500&commit=Search" for 127.0.0.1 at 2017-05-26 00:32:17 +0700
+
+SyntaxError (/home/sanjana/Desktop/Seeds/sims/app/controllers/seeds_controller.rb:11: syntax error, unexpected keyword_else, expecting ')'):
+  app/controllers/seeds_controller.rb:11: syntax error, unexpected keyword_else, expecting ')'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (24.1ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&search=500&commit=Search" for 127.0.0.1 at 2017-05-26 00:32:22 +0700
+
+SyntaxError (/home/sanjana/Desktop/Seeds/sims/app/controllers/seeds_controller.rb:11: syntax error, unexpected keyword_else, expecting ')'):
+  app/controllers/seeds_controller.rb:11: syntax error, unexpected keyword_else, expecting ')'
+
+
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.5ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (10.0ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/sanjana/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (22.0ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&search=500&commit=Search" for 127.0.0.1 at 2017-05-26 00:32:32 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"500", "commit"=>"Search"}
+  [1m[36mSeed Load (0.3ms)[0m  [1mSELECT "seeds".* FROM "seeds" WHERE (gid = '500')[0m
+  Rendered seeds/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 22ms (Views: 17.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&search=502&commit=Search" for 127.0.0.1 at 2017-05-26 00:32:37 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"502", "commit"=>"Search"}
+  [1m[35mSeed Load (0.4ms)[0m  SELECT "seeds".* FROM "seeds" WHERE (gid = '502')
+  Rendered seeds/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/seeds?utf8=%E2%9C%93&search=501&commit=Search" for 127.0.0.1 at 2017-05-26 00:32:41 +0700
+Processing by SeedsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"501", "commit"=>"Search"}
+  [1m[36mSeed Load (0.3ms)[0m  [1mSELECT "seeds".* FROM "seeds" WHERE (gid = '501')[0m
+  Rendered seeds/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seeds" for 127.0.0.1 at 2017-05-26 00:32:47 +0700
+Processing by SeedsController#index as HTML
+  [1m[35mSeed Load (1.8ms)[0m  SELECT "seeds".* FROM "seeds"
+  Rendered seeds/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 1.8ms)
